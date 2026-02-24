@@ -366,3 +366,27 @@ const el = (id) => document.getElementById(id);
   // первичная инициализация
   updateButtons();
 })();
+
+// ====== Side flowers: show once on first scroll and keep until refresh ======
+(() => {
+  const THRESHOLD = 80; // сколько нужно проскроллить, чтобы “запустить” эффект
+  let shown = false;
+
+  function showFlowers() {
+    if (shown) return;
+    shown = true;
+    document.body.classList.add("flowers-shown");
+    window.removeEventListener("scroll", onScroll, { passive: true });
+  }
+
+  function onScroll() {
+    if (window.scrollY > THRESHOLD) showFlowers();
+  }
+
+  // если страница открылась уже не вверху (например по якорю) — сразу показать
+  if (window.scrollY > THRESHOLD) {
+    showFlowers();
+  } else {
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+})();
