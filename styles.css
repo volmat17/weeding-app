@@ -69,8 +69,19 @@ a{color:inherit;text-decoration:none}
   border:1px solid var(--line);
   background: var(--surface);
   color: var(--text);
-  border-radius: 12px;
-  padding: 10px 12px;
+  border-radius: 16px;
+
+  width: 56px;
+  height: 56px;
+  padding: 0;
+
+  display: none; /* оставляем, покажем в media */
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;   /* увеличит сам символ ☰ */
+  line-height: 1;
+
   cursor:pointer;
 }
 .mobile-nav{
@@ -867,6 +878,13 @@ body{ position: relative; }
   z-index: 2; /* ниже контента/кнопок, но видно */
 }
 
+.hero__content,
+.section,
+.footer{
+  position: relative;
+  z-index: 1;
+}
+
 /* базовый цветок */
 .flower{
   position: absolute;
@@ -891,20 +909,20 @@ body{ position: relative; }
 
 /* финальное “въехавшее” положение задаём JS через transform */
 
-/* на мобильных — показываем, но уменьшаем */
 @media (max-width: 860px){
 
   .flowers{
     display:block;
+    opacity: .45; /* чтобы не давили */
   }
 
-  .flower--a{ width: 220px; left:-140px; }
-  .flower--b{ width: 200px; right:-140px; }
-  .flower--c{ width: 180px; left:-120px; }
+  .flower--a{ width: 220px; left:-190px; }
+  .flower--b{ width: 200px; right:-190px; }
+  .flower--c{ width: 180px; left:-175px; }
 
-  .flower--d{ width: 220px; right:-140px; }
-  .flower--e{ width: 200px; left:-120px; }
-  .flower--f{ width: 180px; right:-120px; }
+  .flower--d{ width: 220px; right:-190px; }
+  .flower--e{ width: 200px; left:-175px; }
+  .flower--f{ width: 180px; right:-175px; }
 }
 
 /* =====================================================
