@@ -934,6 +934,21 @@ body{ position: relative; }
   z-index: 1;
 }
 
+/* ===== MOBILE: цветы уводим на задний план ===== */
+.flowers{
+  z-index: 0 !important;
+  pointer-events: none;
+}
+
+/* весь основной контент поднимаем выше */
+.hero,
+.section,
+.footer,
+.hero__content{
+  position: relative;
+  z-index: 2;
+}
+
 }
 
 /* =====================================================
