@@ -934,13 +934,16 @@ body{ position: relative; }
   z-index: 1;
 }
 
-/* ===== MOBILE: цветы уводим на задний план ===== */
+/* ===== MOBILE: цветы позади блоков, но видимы ===== */
+
+/* слой цветов — между фоном и контентом */
 .flowers{
-  z-index: 0 !important;
+  z-index: 1 !important;
   pointer-events: none;
+  opacity: 0.45; /* можно 0.4–0.6 по вкусу */
 }
 
-/* весь основной контент поднимаем выше */
+/* основной контент выше цветов */
 .hero,
 .section,
 .footer,
